@@ -14,8 +14,7 @@ $.ajaxPrefilter(option => {
     option.url = baseUrl + option.url
 
     option.complete = res =>{
-      console.log(res);
-      if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！'){
+        if(res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！'){
         location.href = '/login.html'
           // 清空本地存储里面的 token
         localStorage.removeItem('token')
